@@ -8,7 +8,7 @@ const Josefin = Josefin_Sans({
 
 export const metadata: Metadata = {
   title: "Prosters Store 07",
-  description: "More than just a store for me",
+  description: "trying to puish with dev",
 };
 
 export default function RootLayout({
