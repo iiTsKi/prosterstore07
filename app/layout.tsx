@@ -31,18 +31,20 @@ export default function RootLayout({
   useEffect(() => {
     const loader = document.getElementById("initial-loader");
     if (loader) {
-      loader.style.opacity = "0";
-      loader.style.pointerEvents = "none";
       setTimeout(() => {
-        console.log("useEffect-InitialLoader,Loaded");
-        loader.remove();
-      }, 1500);
+        loader.style.opacity = "0";
+        loader.style.pointerEvents = "none";
+        setTimeout(() => {
+          console.log("useEffect-InitialLoader,Loaded");
+          loader.remove();
+        }, 500);
+      }, 3000);
     }
   }, []);
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${Josefin.className} antialiased`}>
-        <div id="intial-loader" className="">
+        <div id="initial-loader" className="">
           Loader... Loading...
         </div>
         <ThemeProvider
