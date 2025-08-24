@@ -23,12 +23,14 @@ class MyDocument extends Document {
               left: 0;
               width: 100vw;
               height: 100vh;
-              background: #000;
+              background: #111;
               color: #fff;
+              font-size: 24px;
               display: flex;
               align-items: center;
               justify-content: center;
               z-index: 9999;
+              font-family: sans-serif;
             }
           `}</style>
 
