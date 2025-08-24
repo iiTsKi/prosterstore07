@@ -5,7 +5,7 @@ import "../assets/styles/globals.css";
 import { Josefin_Sans } from "next/font/google";
 
 import { ThemeProvider } from "next-themes";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // export const metadata: Metadata = {
 //   title: {
@@ -28,32 +28,43 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [mounted, isMounted] = useState(false);
   useEffect(() => {
     const loader = document.getElementById("initial-loader");
     if (loader) {
       setTimeout(() => {
+        isMounted(true);
         loader.style.opacity = "0";
         loader.style.pointerEvents = "none";
         setTimeout(() => {
-          console.log("useEffect-InitialLoader,Loaded");
           loader.remove();
-        }, 500);
-      }, 3000);
+        }, 300);
+      }, 1500);
     }
   }, []);
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${Josefin.className} antialiased`}>
-        <div id="initial-loader" className="">
-          Loader... Loading...
-        </div>
+        {!mounted && (
+          <>
+            <div id="initial-loader" className="">
+              <img
+                src="/Spinning-Icon-Dollar.gif"
+                alt=""
+                height="32"
+                width="32"
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+          </>
+        )}
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          {mounted && children}
         </ThemeProvider>
 
         <style>{`
@@ -72,6 +83,9 @@ export default function RootLayout({
             z-index: 9999;
             transition: opacity 0.5s ease;
           }
+            #intial-loader img{
+            max-width: 32px;
+            max-height: 32px}
         `}</style>
       </body>
     </html>

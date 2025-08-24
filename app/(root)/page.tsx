@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Home",
 };
-const HomePage = () => {
+const HomePage = async () => {
   return (
     <>
       <div className="center-screen">
