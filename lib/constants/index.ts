@@ -3,3 +3,4 @@ export const APP_ICON = process.env.NEXT_PUBLIC_APP_ICON;
 export const APP_DESCRIPTION =
   process.env.NEXT_PUBLIC_APP_DESCRIPTION || "A Modern NextJS Ecommerce";
 export const SERVER_URL = "http://localhost:3000";
+export const NEW_ARRIVALS_DISPLAY_LIMIT = 4;

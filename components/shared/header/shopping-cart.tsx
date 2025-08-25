@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const ShoppingCartIcon = () => {
+const MenuShoppingCart = () => {
   const [hovered, isHovered] = useState(false);
   return (
     <div
@@ -23,4 +23,4 @@ const ShoppingCartIcon = () => {
   );
 };
 
-export default ShoppingCartIcon;
+export default MenuShoppingCart;

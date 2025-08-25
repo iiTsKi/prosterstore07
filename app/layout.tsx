@@ -2,8 +2,6 @@
 
 import "../assets/styles/globals.css";
 
-import { Josefin_Sans } from "next/font/google";
-
 import { ThemeProvider } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -19,8 +17,17 @@ import { useEffect, useState } from "react";
 //   },
 // };
 
-const Josefin = Josefin_Sans({
+import { Pixelify_Sans, VT323 } from "next/font/google";
+
+const VT323font = VT323({
   subsets: ["latin"],
+  weight: ["400"], // include weights as needed
+  display: "swap",
+});
+const PixelifySansfont = Pixelify_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -44,7 +51,7 @@ export default function RootLayout({
   }, []);
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${Josefin.className} antialiased`}>
+      <body className={`${PixelifySansfont.className} antialiased`}>
         {!mounted && (
           <>
             <div id="initial-loader" className="">

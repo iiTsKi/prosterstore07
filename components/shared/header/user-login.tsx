@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const UserLoginIcon = () => {
+const MenuUserLogin = () => {
   const [hovered, isHovered] = useState(false);
   return (
     <>
@@ -25,4 +25,4 @@ const UserLoginIcon = () => {
   );
 };
 
-export default UserLoginIcon;
+export default MenuUserLogin;
