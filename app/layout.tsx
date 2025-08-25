@@ -17,13 +17,8 @@ import { useEffect, useState } from "react";
 //   },
 // };
 
-import { Pixelify_Sans, VT323 } from "next/font/google";
+import { Pixelify_Sans } from "next/font/google";
 
-const VT323font = VT323({
-  subsets: ["latin"],
-  weight: ["400"], // include weights as needed
-  display: "swap",
-});
 const PixelifySansfont = Pixelify_Sans({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -55,6 +50,7 @@ export default function RootLayout({
         {!mounted && (
           <>
             <div id="initial-loader" className="">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/Spinning-Icon-Dollar.gif"
                 alt=""

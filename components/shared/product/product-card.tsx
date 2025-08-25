@@ -1,7 +1,5 @@
 "use client";
 
-import DarkCard from "@/public/Sprite-Card01.png";
-import GoldCard from "@/public/Sprite-Card02.png";
 import Image from "next/image";
 import Link from "next/link";
 import ProductPrice from "./product-price";
@@ -13,7 +11,7 @@ const VT323font = VT323({
   weight: ["400"], // include weights as needed
   display: "swap",
 });
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ProductCard = ({ product }: { product: any }) => {
   const { theme } = useTheme();
   return (
